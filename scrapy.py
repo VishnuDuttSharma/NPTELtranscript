@@ -45,8 +45,8 @@ class Subject:
         print "Institute:\t",self.institute
 
     def getDescription(self):
-        #return self.name+'\t'+self.faculty+'\t'+self.institute
-        return self.name+'\n     '+self.faculty+'\n     '+self.institute
+        return self.name+':\t('+self.institute+')'
+        #return self.name+'\n     '+self.faculty+'\n     '+self.institute
 
 def updateBranch( data,  fileName = './Database/Branch_List.csv'):
 
@@ -288,6 +288,8 @@ def __main__():
         if( option2 != 0):
             break
 
+    print 'Downloading: '
+    subject_list[ option2 - 1].printDescription()
     getTranscript( subject_list[ option2 - 1 ].link, subject_list[ option2 - 1].name )
 
 __main__()
